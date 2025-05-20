@@ -38,6 +38,11 @@ Bash
 pip install -r requirements.txt
 
 このファイルには、google-generativeai (Gemini API用)、serpapi (Web検索用)、gradio (UI構築用)、requests (Webコンテンツ取得用)、beautifulsoup4 (HTMLパース用)、Pillow (画像処理用)、moviepy (動画処理用) などが含まれています。
+
+**動画処理に関する注意 (`moviepy` と `ffmpeg`)**
+
+このアプリケーションは動画処理に `moviepy` ライブラリを使用しており、`moviepy` は `ffmpeg` がシステムにインストールされていることを前提としています。Hugging Face Spacesのような多くの標準的な実行環境では `ffmpeg` が利用可能ですが、ローカル環境や特殊な環境で動画処理機能を使用する際にエラーが発生する場合は、ご自身の環境に `ffmpeg` がインストールされ、`moviepy` からアクセス可能（通常はシステムのPATHが通っている状態）であることを確認してください。
+
 .envファイルを作成し、必要なAPIキーを設定します。
 
 GOOGLE_API_KEY=your_google_api_key
@@ -240,4 +245,5 @@ API使用量の注意点
 
 免責事項
 
-このアプリはHugging Face Spacesの無料ティアでの利用を想定しており、大規模なデータ処理や継続的な高負荷での利用には向いていません。また、APIの利用には、各プロバイダ（Google Gemini API、Serper API）の料金体系に従って料金が発生する場合がありますので、利用状況には十分ご注意ください。
+このアプリはHugging Face Spacesの無料ティアでの利用を想定しており、大規模なデータ処理や継続的な高負荷での利用には向いていません。
+また、APIの利用には、各プロバイダ（Google Gemini API、Serper API）の料金体系に従って料金が発生する場合がありますので、利用状況には十分ご注意ください。
